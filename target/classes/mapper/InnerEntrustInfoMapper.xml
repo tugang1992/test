@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kingsoft.mybatisGenerator.dao.InnerEntrustInfoMapper">
+  <resultMap id="BaseResultMap" type="com.kingsoft.mybatisGenerator.pojo.InnerEntrustInfo">
+    <result column="ExchangeCode" jdbcType="VARCHAR" property="exchangecode" />
+    <result column="TradeServerIp" jdbcType="VARCHAR" property="tradeserverip" />
+    <result column="AccountId" jdbcType="VARCHAR" property="accountid" />
+    <result column="EntrustId" jdbcType="VARCHAR" property="entrustid" />
+    <result column="EntrustState" jdbcType="INTEGER" property="entruststate" />
+    <result column="EntrustType" jdbcType="INTEGER" property="entrusttype" />
+    <result column="OperatorType" jdbcType="INTEGER" property="operatortype" />
+    <result column="BuyOrSell" jdbcType="CHAR" property="buyorsell" />
+    <result column="EntrustPrice" jdbcType="DECIMAL" property="entrustprice" />
+    <result column="EntrustQty" jdbcType="INTEGER" property="entrustqty" />
+    <result column="EntrustTime" jdbcType="TIMESTAMP" property="entrusttime" />
+    <result column="RelationEntrustId" jdbcType="VARCHAR" property="relationentrustid" />
+    <result column="InnerCommodityNo" jdbcType="VARCHAR" property="innercommodityno" />
+    <result column="OuterCommodityNo" jdbcType="VARCHAR" property="outercommodityno" />
+    <result column="OuterContractNo" jdbcType="VARCHAR" property="outercontractno" />
+    <result column="CurrentExchangeRate" jdbcType="DECIMAL" property="currentexchangerate" />
+    <result column="OuterEntrustPrice" jdbcType="DECIMAL" property="outerentrustprice" />
+    <result column="OuterSessionId" jdbcType="VARCHAR" property="outersessionid" />
+    <result column="OuterEntrustId" jdbcType="VARCHAR" property="outerentrustid" />
+    <result column="OuterRetCode" jdbcType="INTEGER" property="outerretcode" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.kingsoft.mybatisGenerator.pojo.InnerEntrustInfo">
+    <result column="EntrustMsg" jdbcType="LONGVARCHAR" property="entrustmsg" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    EntrustMsg
+  </sql>
+  <insert id="insert" parameterType="com.kingsoft.mybatisGenerator.pojo.InnerEntrustInfo">
+    insert into InnerEntrustInfo (ExchangeCode, TradeServerIp, AccountId, 
+      EntrustId, EntrustState, EntrustType, 
+      OperatorType, BuyOrSell, EntrustPrice, 
+      EntrustQty, EntrustTime, RelationEntrustId, 
+      InnerCommodityNo, OuterCommodityNo, OuterContractNo, 
+      CurrentExchangeRate, OuterEntrustPrice, 
+      OuterSessionId, OuterEntrustId, OuterRetCode, 
+      createtime, EntrustMsg)
+    values (#{exchangecode,jdbcType=VARCHAR}, #{tradeserverip,jdbcType=VARCHAR}, #{accountid,jdbcType=VARCHAR}, 
+      #{entrustid,jdbcType=VARCHAR}, #{entruststate,jdbcType=INTEGER}, #{entrusttype,jdbcType=INTEGER}, 
+      #{operatortype,jdbcType=INTEGER}, #{buyorsell,jdbcType=CHAR}, #{entrustprice,jdbcType=DECIMAL}, 
+      #{entrustqty,jdbcType=INTEGER}, #{entrusttime,jdbcType=TIMESTAMP}, #{relationentrustid,jdbcType=VARCHAR}, 
+      #{innercommodityno,jdbcType=VARCHAR}, #{outercommodityno,jdbcType=VARCHAR}, #{outercontractno,jdbcType=VARCHAR}, 
+      #{currentexchangerate,jdbcType=DECIMAL}, #{outerentrustprice,jdbcType=DECIMAL}, 
+      #{outersessionid,jdbcType=VARCHAR}, #{outerentrustid,jdbcType=VARCHAR}, #{outerretcode,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{entrustmsg,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.kingsoft.mybatisGenerator.pojo.InnerEntrustInfo">
+    insert into InnerEntrustInfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="exchangecode != null">
+        ExchangeCode,
+      </if>
+      <if test="tradeserverip != null">
+        TradeServerIp,
+      </if>
+      <if test="accountid != null">
+        AccountId,
+      </if>
+      <if test="entrustid != null">
+        EntrustId,
+      </if>
+      <if test="entruststate != null">
+        EntrustState,
+      </if>
+      <if test="entrusttype != null">
+        EntrustType,
+      </if>
+      <if test="operatortype != null">
+        OperatorType,
+      </if>
+      <if test="buyorsell != null">
+        BuyOrSell,
+      </if>
+      <if test="entrustprice != null">
+        EntrustPrice,
+      </if>
+      <if test="entrustqty != null">
+        EntrustQty,
+      </if>
+      <if test="entrusttime != null">
+        EntrustTime,
+      </if>
+      <if test="relationentrustid != null">
+        RelationEntrustId,
+      </if>
+      <if test="innercommodityno != null">
+        InnerCommodityNo,
+      </if>
+      <if test="outercommodityno != null">
+        OuterCommodityNo,
+      </if>
+      <if test="outercontractno != null">
+        OuterContractNo,
+      </if>
+      <if test="currentexchangerate != null">
+        CurrentExchangeRate,
+      </if>
+      <if test="outerentrustprice != null">
+        OuterEntrustPrice,
+      </if>
+      <if test="outersessionid != null">
+        OuterSessionId,
+      </if>
+      <if test="outerentrustid != null">
+        OuterEntrustId,
+      </if>
+      <if test="outerretcode != null">
+        OuterRetCode,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="entrustmsg != null">
+        EntrustMsg,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="exchangecode != null">
+        #{exchangecode,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeserverip != null">
+        #{tradeserverip,jdbcType=VARCHAR},
+      </if>
+      <if test="accountid != null">
+        #{accountid,jdbcType=VARCHAR},
+      </if>
+      <if test="entrustid != null">
+        #{entrustid,jdbcType=VARCHAR},
+      </if>
+      <if test="entruststate != null">
+        #{entruststate,jdbcType=INTEGER},
+      </if>
+      <if test="entrusttype != null">
+        #{entrusttype,jdbcType=INTEGER},
+      </if>
+      <if test="operatortype != null">
+        #{operatortype,jdbcType=INTEGER},
+      </if>
+      <if test="buyorsell != null">
+        #{buyorsell,jdbcType=CHAR},
+      </if>
+      <if test="entrustprice != null">
+        #{entrustprice,jdbcType=DECIMAL},
+      </if>
+      <if test="entrustqty != null">
+        #{entrustqty,jdbcType=INTEGER},
+      </if>
+      <if test="entrusttime != null">
+        #{entrusttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="relationentrustid != null">
+        #{relationentrustid,jdbcType=VARCHAR},
+      </if>
+      <if test="innercommodityno != null">
+        #{innercommodityno,jdbcType=VARCHAR},
+      </if>
+      <if test="outercommodityno != null">
+        #{outercommodityno,jdbcType=VARCHAR},
+      </if>
+      <if test="outercontractno != null">
+        #{outercontractno,jdbcType=VARCHAR},
+      </if>
+      <if test="currentexchangerate != null">
+        #{currentexchangerate,jdbcType=DECIMAL},
+      </if>
+      <if test="outerentrustprice != null">
+        #{outerentrustprice,jdbcType=DECIMAL},
+      </if>
+      <if test="outersessionid != null">
+        #{outersessionid,jdbcType=VARCHAR},
+      </if>
+      <if test="outerentrustid != null">
+        #{outerentrustid,jdbcType=VARCHAR},
+      </if>
+      <if test="outerretcode != null">
+        #{outerretcode,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="entrustmsg != null">
+        #{entrustmsg,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

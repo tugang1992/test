@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kingsoft.mybatisGenerator.dao.InnerPositionMapper">
+  <resultMap id="BaseResultMap" type="com.kingsoft.mybatisGenerator.pojo.InnerPosition">
+    <id column="EntrustId" jdbcType="VARCHAR" property="entrustid" />
+    <result column="AccountId" jdbcType="VARCHAR" property="accountid" />
+    <result column="CommodityNo" jdbcType="VARCHAR" property="commodityno" />
+    <result column="OuterSessionId" jdbcType="VARCHAR" property="outersessionid" />
+    <result column="BuyOrSell" jdbcType="CHAR" property="buyorsell" />
+    <result column="OrderQty" jdbcType="INTEGER" property="orderqty" />
+    <result column="OpenQty" jdbcType="INTEGER" property="openqty" />
+    <result column="CloseQty" jdbcType="INTEGER" property="closeqty" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    EntrustId, AccountId, CommodityNo, OuterSessionId, BuyOrSell, OrderQty, OpenQty, 
+    CloseQty, createtime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from InnerPosition
+    where EntrustId = #{entrustid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from InnerPosition
+    where EntrustId = #{entrustid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.kingsoft.mybatisGenerator.pojo.InnerPosition">
+    insert into InnerPosition (EntrustId, AccountId, CommodityNo, 
+      OuterSessionId, BuyOrSell, OrderQty, 
+      OpenQty, CloseQty, createtime
+      )
+    values (#{entrustid,jdbcType=VARCHAR}, #{accountid,jdbcType=VARCHAR}, #{commodityno,jdbcType=VARCHAR}, 
+      #{outersessionid,jdbcType=VARCHAR}, #{buyorsell,jdbcType=CHAR}, #{orderqty,jdbcType=INTEGER}, 
+      #{openqty,jdbcType=INTEGER}, #{closeqty,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.kingsoft.mybatisGenerator.pojo.InnerPosition">
+    insert into InnerPosition
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="entrustid != null">
+        EntrustId,
+      </if>
+      <if test="accountid != null">
+        AccountId,
+      </if>
+      <if test="commodityno != null">
+        CommodityNo,
+      </if>
+      <if test="outersessionid != null">
+        OuterSessionId,
+      </if>
+      <if test="buyorsell != null">
+        BuyOrSell,
+      </if>
+      <if test="orderqty != null">
+        OrderQty,
+      </if>
+      <if test="openqty != null">
+        OpenQty,
+      </if>
+      <if test="closeqty != null">
+        CloseQty,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="entrustid != null">
+        #{entrustid,jdbcType=VARCHAR},
+      </if>
+      <if test="accountid != null">
+        #{accountid,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityno != null">
+        #{commodityno,jdbcType=VARCHAR},
+      </if>
+      <if test="outersessionid != null">
+        #{outersessionid,jdbcType=VARCHAR},
+      </if>
+      <if test="buyorsell != null">
+        #{buyorsell,jdbcType=CHAR},
+      </if>
+      <if test="orderqty != null">
+        #{orderqty,jdbcType=INTEGER},
+      </if>
+      <if test="openqty != null">
+        #{openqty,jdbcType=INTEGER},
+      </if>
+      <if test="closeqty != null">
+        #{closeqty,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kingsoft.mybatisGenerator.pojo.InnerPosition">
+    update InnerPosition
+    <set>
+      <if test="accountid != null">
+        AccountId = #{accountid,jdbcType=VARCHAR},
+      </if>
+      <if test="commodityno != null">
+        CommodityNo = #{commodityno,jdbcType=VARCHAR},
+      </if>
+      <if test="outersessionid != null">
+        OuterSessionId = #{outersessionid,jdbcType=VARCHAR},
+      </if>
+      <if test="buyorsell != null">
+        BuyOrSell = #{buyorsell,jdbcType=CHAR},
+      </if>
+      <if test="orderqty != null">
+        OrderQty = #{orderqty,jdbcType=INTEGER},
+      </if>
+      <if test="openqty != null">
+        OpenQty = #{openqty,jdbcType=INTEGER},
+      </if>
+      <if test="closeqty != null">
+        CloseQty = #{closeqty,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where EntrustId = #{entrustid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kingsoft.mybatisGenerator.pojo.InnerPosition">
+    update InnerPosition
+    set AccountId = #{accountid,jdbcType=VARCHAR},
+      CommodityNo = #{commodityno,jdbcType=VARCHAR},
+      OuterSessionId = #{outersessionid,jdbcType=VARCHAR},
+      BuyOrSell = #{buyorsell,jdbcType=CHAR},
+      OrderQty = #{orderqty,jdbcType=INTEGER},
+      OpenQty = #{openqty,jdbcType=INTEGER},
+      CloseQty = #{closeqty,jdbcType=INTEGER},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
+    where EntrustId = #{entrustid,jdbcType=VARCHAR}
+  </update>
+</mapper>

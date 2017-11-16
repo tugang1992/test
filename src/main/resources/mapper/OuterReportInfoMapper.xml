@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kingsoft.mybatisGenerator.dao.OuterReportInfoMapper">
+  <resultMap id="BaseResultMap" type="com.kingsoft.mybatisGenerator.pojo.OuterReportInfo">
+    <result column="AccountId" jdbcType="VARCHAR" property="accountid" />
+    <result column="SessionId" jdbcType="VARCHAR" property="sessionid" />
+    <result column="Qty" jdbcType="INTEGER" property="qty" />
+    <result column="Price" jdbcType="DECIMAL" property="price" />
+    <result column="InnerEntrustId" jdbcType="VARCHAR" property="innerentrustid" />
+    <result column="OuterEntrustId" jdbcType="VARCHAR" property="outerentrustid" />
+    <result column="StreamId" jdbcType="VARCHAR" property="streamid" />
+    <result column="MatchNo" jdbcType="VARCHAR" property="matchno" />
+    <result column="OrderState" jdbcType="CHAR" property="orderstate" />
+    <result column="MatchFee" jdbcType="DECIMAL" property="matchfee" />
+    <result column="InterfaceName" jdbcType="VARCHAR" property="interfacename" />
+    <result column="ErrorCode" jdbcType="INTEGER" property="errorcode" />
+    <result column="ErrorText" jdbcType="VARCHAR" property="errortext" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.kingsoft.mybatisGenerator.pojo.OuterReportInfo">
+    <result column="OuterMsg" jdbcType="LONGVARCHAR" property="outermsg" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    OuterMsg
+  </sql>
+  <insert id="insert" parameterType="com.kingsoft.mybatisGenerator.pojo.OuterReportInfo">
+    insert into OuterReportInfo (AccountId, SessionId, Qty, 
+      Price, InnerEntrustId, OuterEntrustId, 
+      StreamId, MatchNo, OrderState, 
+      MatchFee, InterfaceName, ErrorCode, 
+      ErrorText, createtime, OuterMsg
+      )
+    values (#{accountid,jdbcType=VARCHAR}, #{sessionid,jdbcType=VARCHAR}, #{qty,jdbcType=INTEGER}, 
+      #{price,jdbcType=DECIMAL}, #{innerentrustid,jdbcType=VARCHAR}, #{outerentrustid,jdbcType=VARCHAR}, 
+      #{streamid,jdbcType=VARCHAR}, #{matchno,jdbcType=VARCHAR}, #{orderstate,jdbcType=CHAR}, 
+      #{matchfee,jdbcType=DECIMAL}, #{interfacename,jdbcType=VARCHAR}, #{errorcode,jdbcType=INTEGER}, 
+      #{errortext,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{outermsg,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.kingsoft.mybatisGenerator.pojo.OuterReportInfo">
+    insert into OuterReportInfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="accountid != null">
+        AccountId,
+      </if>
+      <if test="sessionid != null">
+        SessionId,
+      </if>
+      <if test="qty != null">
+        Qty,
+      </if>
+      <if test="price != null">
+        Price,
+      </if>
+      <if test="innerentrustid != null">
+        InnerEntrustId,
+      </if>
+      <if test="outerentrustid != null">
+        OuterEntrustId,
+      </if>
+      <if test="streamid != null">
+        StreamId,
+      </if>
+      <if test="matchno != null">
+        MatchNo,
+      </if>
+      <if test="orderstate != null">
+        OrderState,
+      </if>
+      <if test="matchfee != null">
+        MatchFee,
+      </if>
+      <if test="interfacename != null">
+        InterfaceName,
+      </if>
+      <if test="errorcode != null">
+        ErrorCode,
+      </if>
+      <if test="errortext != null">
+        ErrorText,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="outermsg != null">
+        OuterMsg,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="accountid != null">
+        #{accountid,jdbcType=VARCHAR},
+      </if>
+      <if test="sessionid != null">
+        #{sessionid,jdbcType=VARCHAR},
+      </if>
+      <if test="qty != null">
+        #{qty,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="innerentrustid != null">
+        #{innerentrustid,jdbcType=VARCHAR},
+      </if>
+      <if test="outerentrustid != null">
+        #{outerentrustid,jdbcType=VARCHAR},
+      </if>
+      <if test="streamid != null">
+        #{streamid,jdbcType=VARCHAR},
+      </if>
+      <if test="matchno != null">
+        #{matchno,jdbcType=VARCHAR},
+      </if>
+      <if test="orderstate != null">
+        #{orderstate,jdbcType=CHAR},
+      </if>
+      <if test="matchfee != null">
+        #{matchfee,jdbcType=DECIMAL},
+      </if>
+      <if test="interfacename != null">
+        #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="errorcode != null">
+        #{errorcode,jdbcType=INTEGER},
+      </if>
+      <if test="errortext != null">
+        #{errortext,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="outermsg != null">
+        #{outermsg,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
